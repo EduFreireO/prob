@@ -1,8 +1,6 @@
 from random import randint
 from read import read_name
 
-
-
 input_size = 1000
 names = read_name(input_size)
 
