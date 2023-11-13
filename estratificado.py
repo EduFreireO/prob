@@ -24,6 +24,8 @@ female_list = sample(female_list, sample_size)
 for _ in male_list:
     print(_)
 
+
 for _ in female_list:
      print(_)
     
+
