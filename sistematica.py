@@ -11,11 +11,11 @@ names = read_name('input/random.txt')
 
 sample_size = 40
 
-ratio = input_size // sample_size
-first = randint(0, ratio - 1)
+K = input_size // sample_size
+first = randint(0, K - 1)
 
 
-for index in range(first, input_size, ratio):
+for index in range(first, input_size, K):
     file.write(names[index])
     
 

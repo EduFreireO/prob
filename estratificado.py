@@ -23,17 +23,18 @@ est3 = sample(estratos[2], nES3)
 
 file = open('output/estratificado.out', 'w')
 
+file.write(f"\n{nES1 + nES2 + nES3}\n")
 
-file.write("\nPrimeiro Estrato\n")
+file.write(f"\nPrimeiro Estrato: {nES1} \n")
 for line in est1:
     file.write(line + '\n')
 
 
-file.write("\nSegundo Estrato\n")
+file.write(f"\nSegundo Estrato: {nES2} \n")
 for line in est2:
     file.write(line + '\n')
 
-file.write("\nTerceiro Estrato\n")
+file.write(f"\nTerceiro Estrato: {nES3} \n")
 for line in est3:
     file.write(line + '\n')        
 
