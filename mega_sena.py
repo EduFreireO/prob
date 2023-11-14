@@ -8,7 +8,7 @@ def sorteio(n, lower, upper):
             numbers.add(value)
     return numbers
 
-file = open("out.txt", "w")
+file = open("output/mega_sena.out", "w")
 numbers = sorteio(6, 1, 60)
 
 for number in numbers:

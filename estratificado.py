@@ -1,31 +1,41 @@
-import math
-from read import read_name
 from simples import sample
-from scipy.stats import norm
-from size_sample import calculate_sample_size
+from read import read_estra
 
 
+size_1 = 50
+size_2 = 70
+size_3 = 80
 
-p = 0.5  
-margin_of_error = 0.05  
-confidence_level = 0.95 
-population_size = 100  
+path = 'input/escola.in'
+estratos = read_estra(size_1, size_2, size_3, path)
 
-sample_size = calculate_sample_size(p, margin_of_error, confidence_level, population_size)
-print(sample_size)
+tamAmostra = 40
+tamPop = 200
+f = tamAmostra / tamPop
+
+nES1 = int(size_1 * f)
+nES2 = int(size_2 * f)
+nES3 = int(size_3 * f)
+ 
+est1 = sample(estratos[0], nES1)
+est2 = sample(estratos[1], nES2)
+est3 = sample(estratos[2], nES3)
+
+file = open('output/estratificado.out', 'w')
 
 
-male_list = read_name(100)
-female_list = read_name(100)
-
-male_list = sample(male_list, sample_size)
-female_list = sample(female_list, sample_size)
-
-for _ in male_list:
-    print(_)
+file.write("\nPrimeiro Estrato\n")
+for line in est1:
+    file.write(line + '\n')
 
 
-for _ in female_list:
-     print(_)
-    
+file.write("\nSegundo Estrato\n")
+for line in est2:
+    file.write(line + '\n')
+
+file.write("\nTerceiro Estrato\n")
+for line in est3:
+    file.write(line + '\n')        
+
+
 
